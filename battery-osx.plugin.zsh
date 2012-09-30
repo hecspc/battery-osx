@@ -13,6 +13,7 @@ function battery_set_no_battery_present_prompt
     function battery_pct_remaining() { battery_prompt_echo $error_msg }
     function battery_time_remaining() { battery_prompt_echo $error_msg }
     function battery_pct_prompt() { battery_prompt_echo '' }
+    function battery_icon_prompt() { battery_prompt_echo '' }
 }
 
 
