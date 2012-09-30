@@ -52,7 +52,11 @@ function battery_present_prompt_common
       elif [ $CHARGE -gt 15 ] ; then
           OUTPUT="%{$fg[red]%}❚❚%{$fg[white]%}❚❚❚"
       else
+        if [ $DISCHARGING -eq 1]; then
           OUTPUT="%{$fg[red]%}❚$(battery_time_remaining)"
+        else
+          OUTPUT="%{$fg[red]%}❚%{$fg[white]%}❚❚❚❚"
+        fi
       fi
 
       echo "$ZSH_THEME_BATTERY_PROMPT_PREFIX$OUTPUT$ZSH_THEME_BATTERY_PROMPT_SUFFIX"
